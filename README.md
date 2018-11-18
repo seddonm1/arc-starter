@@ -8,7 +8,7 @@ A starter project to begin coding an [ARC](https://github.com/aglenergy/arc) job
 
 ## Running
 
-Clone this repository then run the included shells script:
+Clone this repository then run the included shells script. The user interface will then be available at http://localhost:8888 and the token will be printed to the console.
 
 ```bash
 ./.develop.sh
