@@ -10,7 +10,17 @@ Clone this repository then run the included shells script. The user interface wi
 ./.develop.sh
 ```
 
-The `.develop.sh` script contains a hard coded memory allocation for [Apache Spark](https://spark.apache.org/) which should be configured for your specific environment.
+The `.develop.sh` script contains a hard coded memory allocation for [Apache Spark](https://spark.apache.org/) which should be configured for your specific environment. e.g. to change from `4G` to `8G` change:
+
+```bash
+-e "SPARK_OPTS='--driver-memory=4G'" \
+```
+
+to 
+
+```bash
+-e "SPARK_OPTS='--driver-memory=8G'" \
+```
 
 ## Screenshot
 
