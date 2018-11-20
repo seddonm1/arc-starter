@@ -1,5 +1,7 @@
 SELECT
+  -- if valid then continue job, else fail with message
   SUM(error) = 0 AS vaild
+  -- log message. json formatting is optional but will be easier to parse in logs
   ,TO_JSON(NAMED_STRUCT(
     'count', COUNT(error), 
     'errors', SUM(error)
