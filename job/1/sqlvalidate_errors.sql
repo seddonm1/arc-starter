@@ -1,6 +1,9 @@
 SELECT
-  SUM(error) = 0
-  ,TO_JSON(NAMED_STRUCT('count', COUNT(error), 'errors', SUM(error)))
+  SUM(error) = 0 AS vaild
+  ,TO_JSON(NAMED_STRUCT(
+    'count', COUNT(error), 
+    'errors', SUM(error)
+  )) AS message
 FROM (
   SELECT 
     CASE 

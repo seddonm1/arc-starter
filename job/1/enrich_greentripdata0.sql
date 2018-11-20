@@ -1,5 +1,6 @@
 SELECT 
     *
+    -- one-hot encode pickup_hour
     ,CAST(HOUR(lpep_pickup_datetime) = 0 AS INT) AS pickup_hour_0
     ,CAST(HOUR(lpep_pickup_datetime) = 1 AS INT) AS pickup_hour_1
     ,CAST(HOUR(lpep_pickup_datetime) = 2 AS INT) AS pickup_hour_2
@@ -24,6 +25,7 @@ SELECT
     ,CAST(HOUR(lpep_pickup_datetime) = 21 AS INT) AS pickup_hour_21
     ,CAST(HOUR(lpep_pickup_datetime) = 22 AS INT) AS pickup_hour_22
     ,CAST(HOUR(lpep_pickup_datetime) = 23 AS INT) AS pickup_hour_23
+    -- one-hot encode pickup date of week
     ,CAST(DAYOFWEEK(lpep_pickup_datetime) = 0 AS INT) AS pickup_dayofweek_0
     ,CAST(DAYOFWEEK(lpep_pickup_datetime) = 1 AS INT) AS pickup_dayofweek_1
     ,CAST(DAYOFWEEK(lpep_pickup_datetime) = 2 AS INT) AS pickup_dayofweek_2
@@ -31,7 +33,9 @@ SELECT
     ,CAST(DAYOFWEEK(lpep_pickup_datetime) = 4 AS INT) AS pickup_dayofweek_4
     ,CAST(DAYOFWEEK(lpep_pickup_datetime) = 5 AS INT) AS pickup_dayofweek_5
     ,CAST(DAYOFWEEK(lpep_pickup_datetime) = 6 AS INT) AS pickup_dayofweek_6
+    -- calculate trip duration in seconds
     ,UNIX_TIMESTAMP(lpep_dropoff_datetime) - UNIX_TIMESTAMP(lpep_pickup_datetime) AS duration
+    -- is pickup or dropoff location is within bounding box of jfk airport
     ,CASE
         WHEN 
             (pickup_latitude < 40.651381 
