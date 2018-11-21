@@ -7,7 +7,7 @@
         "production",
         "test"
       ],
-      "inputURI": "/opt/tutorial/starter/data/input/green_tripdata/0/green_tripdata_2013-08.csv",
+      "inputURI": ${ETL_JOB_ROOT}"/data/input/green_tripdata/0/green_tripdata_2013-08.csv",
       "outputView": "green_tripdata0_raw",
       "persist": false,
       "delimiter": "Comma",
@@ -23,7 +23,7 @@
         "production",
         "test"
       ],
-      "inputURI": "/opt/tutorial/starter/meta/green_tripdata/0/green_tripdata.json",
+      "inputURI": ${ETL_JOB_ROOT}"/meta/green_tripdata/0/green_tripdata.json",
       "inputView": "green_tripdata0_raw",
       "outputView": "green_tripdata0",
       "persist": true,
@@ -37,7 +37,7 @@
         "production",
         "test"
       ],
-      "inputURI": "/opt/tutorial/starter/job/0/sqlvalidate_errors.sql",
+      "inputURI": ${ETL_JOB_ROOT}"/job/0/sqlvalidate_errors.sql",
       "sqlParams": {
         "table_name": "green_tripdata0"
       },
@@ -52,7 +52,7 @@
         "test"
       ],
       "inputView": "green_tripdata0",
-      "outputURI": "/opt/tutorial/starter/data/output/green_tripdata.parquet",
+      "outputURI": ${ETL_JOB_ROOT}"/data/output/green_tripdata.parquet",
       "numPartitions": 4,
       "partitionBy": [],
       "authentication": {},
@@ -66,7 +66,7 @@
         "production",
         "test"
       ],
-      "inputURI": "/opt/tutorial/starter/job/1/enrich_greentripdata0.sql",
+      "inputURI": ${ETL_JOB_ROOT}"/job/1/enrich_greentripdata0.sql",
       "outputView": "green_tripdata0_enriched",
       "persist": false,
       "authentication": {},
@@ -80,7 +80,7 @@
         "production",
         "test"
       ],
-      "inputURI": "/opt/tutorial/starter/job/1/green_tripdata_enriched.model",
+      "inputURI": ${ETL_JOB_ROOT}"/job/1/green_tripdata_enriched.model",
       "inputView": "green_tripdata0_enriched",
       "outputView": "green_tripdata0_prediction",
       "persist": false,
@@ -95,7 +95,7 @@
         "test"
       ],
       "inputView": "green_tripdata0_prediction",
-      "outputURI": "/opt/tutorial/starter/data/output/green_tripdata0_prediction.parquet",
+      "outputURI": ${ETL_JOB_ROOT}"/data/output/green_tripdata0_prediction.parquet",
       "numPartitions": 4,
       "partitionBy": [],
       "authentication": {},
