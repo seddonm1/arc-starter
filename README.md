@@ -1,6 +1,6 @@
-# ARC Starter
+# Arc Starter
 
-A starter project to begin coding an [ARC](https://github.com/aglenergy/arc) job using the Jupyter Notebook interface.
+A starter project to begin coding an [Arc](https://github.com/aglenergy/arc) job using the Jupyter Notebook interface.
 
 ## Running
 
@@ -24,7 +24,7 @@ to
 
 ## How to execute
 
-By default everything will be executed as an Arc stage but if needed SQL can be executed directly which can speed development:
+By default everything will be executed as an Arc stage but if needed SQL can be executed directly by using the Jupyter `%%sql` magic which can speed development:
 
 ```sql
 %%sql
