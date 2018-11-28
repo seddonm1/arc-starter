@@ -22,6 +22,16 @@ to
 -e "SPARK_OPTS='--driver-memory=8G'" \
 ```
 
+## How to execute
+
+By default everything will be executed as an Arc stage but if needed SQL can be executed directly which can speed development:
+
+```sql
+%%sql
+SELECT * 
+FROM green_tripdata0_raw
+```
+
 ## Screenshot
 
 ![ARC in Jupyter Notebooks](./.img/screenshot.png)
