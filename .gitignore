@@ -1,5 +1,6 @@
+.bash_history
 .ipynb_checkpoints
 .ipython
-.jupyter
+.jupyter/migrated
 .local
 spark-warehouse
