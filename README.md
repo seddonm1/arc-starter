@@ -32,6 +32,12 @@ SELECT *
 FROM green_tripdata0_raw
 ```
 
+## Exporting
+
+To export an Arc job an option has been provided in the `File\Download as` menu which will export all the Arc stages from the notebook and create a job file.
+
+![Download as](./.img/download_as.png)
+
 ## Screenshot
 
 ![ARC in Jupyter Notebooks](./.img/screenshot.png)
