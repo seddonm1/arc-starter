@@ -34,7 +34,7 @@ FROM green_tripdata0_raw
 
 ## Exporting
 
-To export an Arc job an option has been provided in the `File\Download as` menu which will export all the Arc stages from the notebook and create a job file. Note that Jupyter Notebooks has been modified so that the `.ipynb` file will not save any `output` datasets to prevent data from bing accidentalally committed to version control.
+To export an Arc job an option has been provided in the `File\Download as` menu which will export all the Arc stages from the notebook and create a job file. Note that Jupyter Notebooks has been modified so that the `.ipynb` file will not save any `output` datasets to prevent data from being accidentally committed to version control.
 
 ![Download as](./.img/download_as.png)
 
