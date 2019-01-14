@@ -22,9 +22,10 @@ to
 -e "SPARK_OPTS='--driver-memory=8G'" \
 ```
 
-If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) ensure that the Docker memory allocation is large enough to support the `--driver-memory` allocation:
+If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/) ensure that the Docker memory allocation is large enough to support the `--driver-memory` allocation:
 
 ![Docker For Mac Memory](./.img/prefs-advanced.png)
+![Docker For Windows Memory](./.img/settings-advanced.png)
 
 ## How to execute
 
