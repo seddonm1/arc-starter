@@ -22,6 +22,10 @@ to
 -e "SPARK_OPTS='--driver-memory=8G'" \
 ```
 
+If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) ensure that the Docker memory allocation is large enough to support the `--driver-memory` allocation:
+
+![Docker For Mac Memory](./.img/prefs-advanced.png)
+
 ## How to execute
 
 By default everything will be executed as an Arc stage but if needed SQL can be executed directly by using the Jupyter `%%sql` magic which can speed development:
@@ -31,6 +35,11 @@ By default everything will be executed as an Arc stage but if needed SQL can be 
 SELECT * 
 FROM green_tripdata0_raw
 ```
+
+Two other 'magics' have been defined:
+
+- `%%schema` which will print the Spark schema of a view.
+- `%%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
 
 ## Exporting
 
