@@ -31,10 +31,10 @@ If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) or 
 
 ## How to execute
 
-By default everything will be executed as an Arc stage but if needed SQL can be executed directly by using the Jupyter `%%sql` magic which can speed development:
+By default everything will be executed as an Arc stage but if needed SQL can be executed directly by using the Jupyter `%%sql` magic which can speed development (`--limit=10` will specify number of rows to return):
 
 ```sql
-%%sql
+%%sql --limit=10
 SELECT * 
 FROM green_tripdata0_raw
 ```
