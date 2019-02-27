@@ -42,6 +42,7 @@ FROM green_tripdata0_raw
 Two other 'magics' have been defined:
 
 - `%%schema` which will print the Spark schema of a view.
+- `%%printschema` which will print the Spark schema in a simple text mode.
 - `%%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
 
 ## Exporting

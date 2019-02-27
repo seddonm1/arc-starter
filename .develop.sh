@@ -8,4 +8,4 @@ docker run \
 -e "SPARK_WORKER_DIR=/local" \
 -p 4040:4040 \
 -p 8888:8888 \
-seddonm1/arc-jupyter:0.0.2
+seddonm1/arc-jupyter:0.0.3
