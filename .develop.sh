@@ -9,6 +9,6 @@ docker run \
 -e "SPARK_WORKER_DIR=/local" \
 -p 4040:4040 \
 -p 8888:8888 \
-seddonm1/arc-jupyter:0.0.4
+seddonm1/arc-jupyter:0.0.5
 docker cp ./.jars/*.jar $(docker ps --latest --quiet):/usr/local/spark-2.4.0-bin-hadoop2.7/jars
 docker attach $(docker ps --latest --quiet)
