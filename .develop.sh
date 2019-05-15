@@ -9,7 +9,7 @@ docker run \
 -e "SPARK_WORKER_DIR=/local" \
 -p 4040:4040 \
 -p 8888:8888 \
-seddonm1/arc-jupyter:0.0.6 \
+seddonm1/arc-jupyter:0.0.7 \
 start-notebook.sh \
 --NotebookApp.password='' \
 --NotebookApp.token=''
