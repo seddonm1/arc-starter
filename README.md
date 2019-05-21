@@ -10,40 +10,47 @@ Clone this repository then run the included shells script. The user interface wi
 ./.develop.sh
 ```
 
-The `.develop.sh` script contains a hard coded memory allocation for [Apache Spark](https://spark.apache.org/) which should be configured for your specific environment. e.g. to change from `4G` to `8G` change:
+The `.develop.sh` script contains a hard coded memory allocation for [Apache Spark](https://spark.apache.org/) via the Java Virtual Machine which should be configured for your specific environment. e.g. to change from 4 Gigabytes to 8 Gigabytes:
 
 ```bash
--e "SPARK_OPTS='--driver-memory=4G'" \
+-e JAVA_OPTS="-Xmx4g" \
 ```
 
 to 
 
 ```bash
--e "SPARK_OPTS='--driver-memory=8G'" \
+-e JAVA_OPTS="-Xmx8g" \
 ```
 
 **Important:**
 
-If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/) ensure that the Docker memory allocation is large enough to support the `--driver-memory` requested:
+If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/) ensure that the Docker memory allocation is large enough to support the memory `-Xmx4g` requested:
 
 ![Docker For Mac Memory](./.img/prefs-advanced.png)
 ![Docker For Windows Memory](./.img/settings-advanced.png)
 
 ## How to execute
 
-By default everything will be executed as an Arc stage but if needed SQL can be executed directly by using the Jupyter `%%sql` magic which can speed development (`--limit=10` will specify number of rows to return):
+By default everything will be executed as an Arc stage.
+
+If needed SQL can be executed directly by using the Jupyter `%sql` magic which can speed development 
 
 ```sql
-%%sql --limit=10
+%sql limit=10 truncate=100 outputView=green_tripdata0
 SELECT * 
 FROM green_tripdata0_raw
+WHERE fare_amount < 10
 ```
+
+- `limit` specifies number of rows to return
+- `truncate` specifies the maximum length of any printed strings
+- `outputView` allows registration of a Spark view so it can be referenced in later stages.
 
 Two other 'magics' have been defined:
 
-- `%%schema` which will print the Spark schema of a view.
-- `%%printschema` which will print the Spark schema in a simple text mode.
-- `%%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
+- `%schema` which will print the Spark schema of a view.
+- `%printschema` which will print the Spark schema in a simple text mode.
+- `%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
 
 ## Exporting
 
