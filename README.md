@@ -48,6 +48,7 @@ WHERE fare_amount < 10
 
 Two other 'magics' have been defined:
 
+- `%env` which allows setting job variables via the notebook (e.g. `%env ETL_CONF_KEY0=value0 ETL_CONF_KEY1=value1`)
 - `%schema` which will print the Spark schema of a view.
 - `%printschema` which will print the Spark schema in a simple text mode.
 - `%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
