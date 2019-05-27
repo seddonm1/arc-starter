@@ -21,14 +21,6 @@ to
 ```bash
 -e JAVA_OPTS="-Xmx8g" \
 ```
-
-**Important:**
-
-If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/) ensure that the Docker memory allocation is large enough to support the memory `-Xmx4g` requested:
-
-![Docker For Mac Memory](./.img/prefs-advanced.png)
-![Docker For Windows Memory](./.img/settings-advanced.png)
-
 ## How to execute
 
 By default everything will be executed as an Arc stage.
@@ -46,18 +38,28 @@ WHERE fare_amount < 10
 - `truncate` specifies the maximum length of any printed strings
 - `outputView` allows registration of a Spark view so it can be referenced in later stages.
 
-Two other 'magics' have been defined:
+These other 'magics' have been defined:
 
 - `%env` which allows setting job variables via the notebook (e.g. `%env ETL_CONF_KEY0=value0 ETL_CONF_KEY1=value1`)
-- `%schema` which will print the Spark schema of a view.
-- `%printschema` which will print the Spark schema in a simple text mode.
 - `%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
+- `%printschema` which will print the Spark schema in a simple text mode.
+- `%schema` which will print the Spark schema of a view.
+- `%summary` which will print summary statistics of a view.
 
 ## Exporting
 
 To export an Arc job an option has been provided in the `File\Download as` menu which will export all the Arc stages from the notebook and create a job file. Note that Jupyter Notebooks has been modified so that the `.ipynb` file will not save any `output` datasets to prevent data from being accidentally committed to version control.
 
 ![Download as](./.img/download_as.png)
+
+## Issues
+
+**Important:**
+
+If you are running [Docker For Mac](https://docs.docker.com/docker-for-mac/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/) ensure that the Docker memory allocation is large enough to support the memory `-Xmx4g` requested:
+
+![Docker For Mac Memory](./.img/prefs-advanced.png)
+![Docker For Windows Memory](./.img/settings-advanced.png)
 
 ## Screenshot
 
