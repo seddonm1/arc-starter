@@ -28,14 +28,14 @@ By default everything will be executed as an Arc stage.
 If needed SQL can be executed directly by using the Jupyter `%sql` magic which can speed development 
 
 ```sql
-%sql limit=10 truncate=100 outputView=green_tripdata0
+%sql numRows=10 truncate=100 outputView=green_tripdata0
 SELECT * 
 FROM green_tripdata0_raw
 WHERE fare_amount < 10
 ```
 
-- `limit` specifies number of rows to return
-- `truncate` specifies the maximum length of any printed strings
+- `numRows` specifies number of rows to display in the table
+- `truncate` specifies the maximum character length of any output strings
 - `outputView` allows registration of a Spark view so it can be referenced in later stages.
 
 These other 'magics' have been defined:
