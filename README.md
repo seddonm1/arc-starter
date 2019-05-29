@@ -25,7 +25,7 @@ to
 
 By default everything will be executed as an Arc stage.
 
-If needed SQL can be executed directly by using the Jupyter `%sql` magic which can speed development 
+If needed SQL can be executed directly by using the Jupyter `%sql` magic which can speed development:
 
 ```sql
 %sql numRows=10 truncate=100 outputView=green_tripdata0
@@ -40,11 +40,12 @@ WHERE fare_amount < 10
 
 These other 'magics' have been defined:
 
-- `%env` which allows setting job variables via the notebook (e.g. `%env ETL_CONF_KEY0=value0 ETL_CONF_KEY1=value1`)
+- `%env` which allows setting job variables via the notebook (e.g. `%env ETL_CONF_KEY0=value0 ETL_CONF_KEY1=value1`). These can be used in both `%arc` and `%sql` stages.
 - `%metadata` which will try to create and print the correct Arc metadata file for the supplied view.
 - `%printschema` which will print the Spark schema in a simple text mode.
 - `%schema` which will print the Spark schema of a view.
 - `%summary` which will print summary statistics of a view.
+- `%version` which will print relevant versions.
 
 ## Exporting
 
