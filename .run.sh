@@ -4,7 +4,7 @@ docker run \
 -e "ETL_CONF_ENV=production" \
 -e "ETL_CONF_BASE_URL=/home/jovyan/tutorial" \
 -p 4040:4040 \
-seddonm1/arc:1.13.1 \
+seddonm1/arc:1.13.2 \
 bin/spark-submit \
 --master local[*] \
 --class au.com.agl.arc.ARC \
