@@ -1,25 +1,43 @@
-{"stages": [{
-  "type": "DelimitedExtract",
-  "name": "extract data from green_tripdata/0",
-  "environments": ["production", "test"],
-  "inputURI": ${ETL_CONF_BASE_URL}"/data/green_tripdata/0/*.csv",
-  "outputView": "green_tripdata0_raw",            
-  "delimiter": "Comma",
-  "quote" : "DoubleQuote",
-  "header": true
-},{
-  "type": "TypingTransform",
-  "name": "apply green_tripdata/0 data types",
-  "environments": ["production", "test"],
-  "inputURI": ${ETL_CONF_BASE_URL}"/meta/green_tripdata/0/green_tripdata.json",
-  "inputView": "green_tripdata0_raw",            
-  "outputView": "green_tripdata0"       
-},{
-  "type": "SQLValidate",
-  "name": "ensure no errors exist after data typing",
-  "environments": ["production", "test"],
-  "inputURI": ${ETL_CONF_BASE_URL}"/job/0/sqlvalidate_errors.sql",            
-  "sqlParams": {
-      "table_name": "green_tripdata0"
-  }
-}]}
+{
+  "stages": [
+    {
+      "type": "DelimitedExtract",
+      "name": "extract data from green_tripdata/0",
+      "environments": [
+        "production",
+        "test"
+      ],
+      "inputURI": ${ETL_CONF_BASE_URL
+      }"/data/green_tripdata/0/*",
+      "outputView": "green_tripdata0_raw",
+      "delimiter": "Comma",
+      "quote": "DoubleQuote",
+      "header": true
+    },
+    {
+      "type": "TypingTransform",
+      "name": "apply green_tripdata/0 data types",
+      "environments": [
+        "production",
+        "test"
+      ],
+      "inputURI": ${ETL_CONF_BASE_URL
+      }"/meta/green_tripdata/0/green_tripdata.json",
+      "inputView": "green_tripdata0_raw",
+      "outputView": "green_tripdata0"
+    },
+    {
+      "type": "SQLValidate",
+      "name": "ensure no errors exist after data typing",
+      "environments": [
+        "production",
+        "test"
+      ],
+      "inputURI": ${ETL_CONF_BASE_URL
+      }"/job/0/sqlvalidate_errors.sql",
+      "sqlParams": {
+        "table_name": "green_tripdata0"
+      }
+    }
+  ]
+}

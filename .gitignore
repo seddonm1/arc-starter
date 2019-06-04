@@ -8,9 +8,5 @@
 .jupyter/migrated
 .local
 .metals/
-tutorial/data/central_park_weather
-tutorial/data/green_tripdata
-tutorial/data/uber_tripdata
-tutorial/data/yellow_tripdata
 tutorial/data/output
 spark-warehouse

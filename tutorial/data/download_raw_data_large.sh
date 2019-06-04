@@ -1,4 +1,5 @@
-# download all the easy files to versioned directories
+# download all the large files to versioned directories
+cat ./raw_data_urls_large.txt | xargs -n1 rm -r
 cat ./raw_data_urls_large.txt | xargs -n1 mkdir -p
 cat ./raw_data_urls_large.txt | xargs -n2 -P4 wget -c -P 
 rm -R https\:/
